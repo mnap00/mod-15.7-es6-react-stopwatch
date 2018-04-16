@@ -1,0 +1,72 @@
+{
+  "name": "mod-15.6-es6-stopwatch",
+  "version": "0.1.0",
+  "description": "ES6 - Simple stopwatch",
+  "main": "dist/script.js",
+  "scripts": {
+    "lint": "run-s lint:*",
+    "lint:html": "html5v dist/*.html",
+    "lint:js": "eslint dist/js",
+    "init": "npm install && run-s init:*",
+    "init:dev": "shx mkdir -p src/images src/js src/sass src/vendor test",
+    "init:dist": "shx mkdir -p dist/css dist/images dist/js dist/vendor",
+    "init:files": "shx touch README.md src/index.html src/sass/style.scss src/js/script.js",
+    "init:gitignore": "shx rm -f .gitignore true && run-s gitignore:*",
+    "gitignore:sass": "curl https://raw.githubusercontent.com/github/gitignore/master/Sass.gitignore >> .gitignore && echo >> .gitignore",
+    "gitignore:node": "curl https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore >> .gitignore && echo >> .gitignore",
+    "build": "run-s build:* lint",
+    "build:clean": "shx rm -rf dist && run-s init:dist",
+    "build:html": "shx cp src/*.html dist/",
+    "build:sass": "node-sass --output-style compact --output dist/css src/sass",
+    "build:babel": "babel src --out-dir dist --copy-files",
+    "build:polyfill": "shx cp node_modules/babel-polyfill/dist/polyfill.min.js src/vendor/ || true",
+    "build:vendor": "shx cp -r src/vendor dist/vendor",
+    "build:autoprefixer": "postcss dist/css/*.css --use autoprefixer --replace",
+    "build-dev:sass": "node-sass --output-style expanded --source-map true --output dist/css src/sass",
+    "build-dev:babel": "babel src --watch --out-dir dist --copy-files",
+    "watch": "run-p watch:*",
+    "watch:browsersync": "browser-sync start --server \"dist\" --files \"dist\"",
+    "watch:html": "onchange \"src/*.html\" -- run-s build:html",
+    "watch:sassprefixer": "onchange \"src/sass/*.scss\" -- run-s build-dev:sass build:autoprefixer",
+    "watch:babel": "onchange \"src/**/*.js\" \"src/*.js\" -- run-s build-dev:babel"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mnap00/mod-15.6-es6-stopwatch.git"
+  },
+  "keywords": [
+    "boilerplate",
+    "webpage",
+    "html5",
+    "sass",
+    "es6",
+    "babel",
+    "eslint",
+    "polyfill"
+  ],
+  "author": "mnap00",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mnap00/mod-15.6-es6-stopwatch/issues"
+  },
+  "homepage": "https://github.com/mnap00/mod-15.6-es6-stopwatch#readme",
+  "devDependencies": {
+    "autoprefixer": "^8.2.0",
+    "babel-cli": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "browser-sync": "^2.23.6",
+    "eslint": "^4.19.1",
+    "eslint-plugin-react": "^7.7.0",
+    "html5-validator": "^1.2.1",
+    "node-sass": "^4.8.3",
+    "npm-run-all": "^4.1.2",
+    "onchange": "^3.3.0",
+    "postcss-cli": "^5.0.0",
+    "shx": "^0.2.2"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {}
+}

@@ -1,2 +1,32 @@
+@import url("https://fonts.googleapis.com/css?family=Cutive+Mono");
+body {
+  background-color: #607d8b;
+  color: #bbb;
+  font-family: "Cutive Mono", monospace;
+}
 
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzdHlsZS5jc3MifQ== */
+.controls {
+  display: flex;
+  font-size: 30px;
+  font-weight: bold;
+  justify-content: center;
+  margin: 30px auto 0;
+  max-width: 600px;
+}
+
+.stopwatch {
+  display: flex;
+  font-size: 90px;
+  font-weight: bold;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.button {
+  color: #bbb;
+  margin: 0;
+  padding: 0 30px;
+  text-decoration: none;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy9zYXNzL3N0eWxlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsbUVBQVk7QUFJWjtFQUNJLDBCQUF5QjtFQUN6QixZQUFXO0VBQ1gsc0NBTGdDO0NBTW5DOztBQUVEO0VBQ0ksY0FBYTtFQUNiLGdCQUFlO0VBQ2Ysa0JBQWlCO0VBQ2pCLHdCQUF1QjtFQUN2QixvQkFBbUI7RUFDbkIsaUJBQWdCO0NBQ25COztBQUVEO0VBQ0ksY0FBYTtFQUNiLGdCQUFlO0VBQ2Ysa0JBQWlCO0VBQ2pCLHdCQUF1QjtFQUN2QixlQUFjO0VBQ2QsaUJBQWdCO0NBQ25COztBQUVEO0VBQ0ksWUFBVztFQUNYLFVBQVM7RUFDVCxnQkFBZTtFQUNmLHNCQUFxQjtDQUN4QiIsImZpbGUiOiJzdHlsZS5jc3MifQ== */

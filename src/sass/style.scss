@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css?family=Cutive+Mono');
+
+$font-main: 'Cutive Mono', monospace;
+
+body {
+    background-color: #607d8b;
+    color: #bbb;
+    font-family: $font-main;
+}
+
+.controls {
+    display: flex;
+    font-size: 30px;
+    font-weight: bold;
+    justify-content: center;
+    margin: 30px auto 0;
+    max-width: 600px;
+}
+
+.stopwatch {
+    display: flex;
+    font-size: 90px;
+    font-weight: bold;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.button {
+    color: #bbb;
+    margin: 0;
+    padding: 0 30px;
+    text-decoration: none;
+}

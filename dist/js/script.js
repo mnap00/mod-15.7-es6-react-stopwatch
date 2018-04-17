@@ -5,13 +5,13 @@ var _createClass = function () { function defineProperties(target, props) { for 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var Stopwatch = function () {
-    function Stopwatch(display) {
+    function Stopwatch(display, results) {
         _classCallCheck(this, Stopwatch);
 
         this.running = false;
         this.display = display;
+        this.results = results;
         this.reset();
-        this.print(this.times);
     }
 
     _createClass(Stopwatch, [{
@@ -22,6 +22,7 @@ var Stopwatch = function () {
                 seconds: 0,
                 miliseconds: 0
             };
+            this.print(this.times);
         }
     }, {
         key: 'print',
@@ -71,6 +72,16 @@ var Stopwatch = function () {
             this.running = false;
             clearInterval(this.watch);
         }
+    }, {
+        key: 'save',
+        value: function save() {
+            this.results.innerHTML += '<li>' + this.format(this.times) + '</li>';
+        }
+    }, {
+        key: 'clear',
+        value: function clear() {
+            this.results.innerHTML = '';
+        }
     }]);
 
     return Stopwatch;
@@ -84,7 +95,7 @@ function pad0(value) {
     return result;
 }
 
-var stopwatch = new Stopwatch(document.querySelector('.stopwatch'));
+var stopwatch = new Stopwatch(document.querySelector('.stopwatch'), document.querySelector('.results'));
 
 var startButton = document.getElementById('start');
 startButton.addEventListener('click', function () {
@@ -94,4 +105,19 @@ startButton.addEventListener('click', function () {
 var stopButton = document.getElementById('stop');
 stopButton.addEventListener('click', function () {
     return stopwatch.stop();
+});
+
+var resetButton = document.getElementById('reset');
+resetButton.addEventListener('click', function () {
+    return stopwatch.reset();
+});
+
+var saveButton = document.getElementById('save');
+saveButton.addEventListener('click', function () {
+    return stopwatch.save();
+});
+
+var clearButton = document.getElementById('clear');
+clearButton.addEventListener('click', function () {
+    return stopwatch.clear();
 });

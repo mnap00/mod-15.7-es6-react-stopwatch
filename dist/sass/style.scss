@@ -8,27 +8,42 @@ body {
     font-family: $font-main;
 }
 
-.controls {
+%component {
     display: flex;
-    font-size: 30px;
+    flex-wrap: wrap;
     font-weight: bold;
     justify-content: center;
+    max-width: 480px;
+}
+
+.controls {
+    @extend %component;
+    font-size: 30px;
     margin: 30px auto 0;
-    max-width: 600px;
 }
 
 .stopwatch {
-    display: flex;
+    @extend %component;
     font-size: 90px;
-    font-weight: bold;
-    justify-content: center;
     margin: 0 auto;
-    max-width: 600px;
 }
 
 .button {
     color: #bbb;
     margin: 0;
-    padding: 0 30px;
+    padding: 10px 30px;
     text-decoration: none;
+}
+
+.results {
+    @extend %component;
+    list-style-type: 0;
+    margin: 0 auto;
+    padding: 0 30px;
+    li {
+        display: flex;
+        flex: 1;
+        font-size: 60px;
+        justify-content: center;
+    }
 }

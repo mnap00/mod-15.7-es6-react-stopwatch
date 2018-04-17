@@ -5,8 +5,8 @@
   "main": "dist/script.js",
   "scripts": {
     "lint": "run-s lint:*",
-    "lint:html": "html5v dist/*.html",
-    "lint:js": "eslint dist/js",
+    "lint:html": "html5v src/*.html",
+    "lint:js": "eslint src/js",
     "init": "npm install && run-s init:*",
     "init:dev": "shx mkdir -p src/images src/js src/sass src/vendor test",
     "init:dist": "shx mkdir -p dist/css dist/images dist/js dist/vendor",

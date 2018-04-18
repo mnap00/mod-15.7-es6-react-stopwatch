@@ -8,7 +8,10 @@ class App extends React.Component {
             running: false,
             minutes: 0,
             seconds: 0,
-            miliseconds: 0
+            miliseconds: 0,
+            results: [
+                //{minutes: 13, seconds: 42, miliseconds: 99}
+            ]
         };
     }
     handleStart = (e) => {
@@ -26,6 +29,21 @@ class App extends React.Component {
             minutes: 0,
             seconds: 0,
             miliseconds: 0
+        });
+    }
+    handleSave = (e) => {
+        let item = {
+            minutes: this.state.minutes,
+            seconds: this.state.seconds,
+            miliseconds: this.state.miliseconds
+        };
+        this.setState({
+            results: [...this.state.results, item]
+        });
+    }
+    handleClear = (e) => {
+        this.setState({
+            results: []
         });
     }
     componentDidMount() {
@@ -64,12 +82,40 @@ class App extends React.Component {
                 <Controls
                     buttons={BUTTONS}
                 />
+                <div className='test' style={{textAlign: 'center'}}>
+                    <a
+                        id='testStart'
+                        className='button'
+                        href='#'
+                        onClick={() => this.handleStart()}
+                    >
+                        TestStart
+                    </a>
+                    <a
+                        id='testStop'
+                        className='button'
+                        href='#'
+                        onClick={() => this.handleStop()}
+                    >
+                        TestStop
+                    </a>
+                    <a
+                        id='testReset'
+                        className='button'
+                        href='#'
+                        onClick={() => this.handleReset()}
+                    >
+                        TestReset
+                    </a>
+                </div>
                 <Stopwatch
                     minutes={this.state.minutes}
                     seconds={this.state.seconds}
                     miliseconds={this.state.miliseconds}
                 />
-                <Results />
+                <Results
+                    results={this.state.results}
+                />
             </div>
         );
     }

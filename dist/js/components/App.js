@@ -2,6 +2,8 @@
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -39,11 +41,31 @@ var App = function (_React$Component) {
             });
         };
 
+        _this.handleSave = function (e) {
+            var item = {
+                minutes: _this.state.minutes,
+                seconds: _this.state.seconds,
+                miliseconds: _this.state.miliseconds
+            };
+            _this.setState({
+                results: [].concat(_toConsumableArray(_this.state.results), [item])
+            });
+        };
+
+        _this.handleClear = function (e) {
+            _this.setState({
+                results: []
+            });
+        };
+
         _this.state = {
             running: false,
             minutes: 0,
             seconds: 0,
-            miliseconds: 0
+            miliseconds: 0,
+            results: [
+                //{minutes: 13, seconds: 42, miliseconds: 99}
+            ]
         };
         return _this;
     }
@@ -96,18 +118,62 @@ var App = function (_React$Component) {
     }, {
         key: 'render',
         value: function render() {
+            var _this3 = this;
+
             return React.createElement(
                 'div',
                 { className: 'app' },
                 React.createElement(Controls, {
                     buttons: BUTTONS
                 }),
+                React.createElement(
+                    'div',
+                    { className: 'test', style: { textAlign: 'center' } },
+                    React.createElement(
+                        'a',
+                        {
+                            id: 'testStart',
+                            className: 'button',
+                            href: '#',
+                            onClick: function onClick() {
+                                return _this3.handleStart();
+                            }
+                        },
+                        'TestStart'
+                    ),
+                    React.createElement(
+                        'a',
+                        {
+                            id: 'testStop',
+                            className: 'button',
+                            href: '#',
+                            onClick: function onClick() {
+                                return _this3.handleStop();
+                            }
+                        },
+                        'TestStop'
+                    ),
+                    React.createElement(
+                        'a',
+                        {
+                            id: 'testReset',
+                            className: 'button',
+                            href: '#',
+                            onClick: function onClick() {
+                                return _this3.handleReset();
+                            }
+                        },
+                        'TestReset'
+                    )
+                ),
                 React.createElement(Stopwatch, {
                     minutes: this.state.minutes,
                     seconds: this.state.seconds,
                     miliseconds: this.state.miliseconds
                 }),
-                React.createElement(Results, null)
+                React.createElement(Results, {
+                    results: this.state.results
+                })
             );
         }
     }]);

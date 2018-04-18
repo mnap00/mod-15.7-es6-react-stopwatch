@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -8,35 +8,36 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-/*global React:true*/
+/*global React:true pad0:true*/
 /*eslint no-undef: "error"*/
 /*eslint-disable no-unused-vars*/
-var Results = function (_React$Component) {
-    _inherits(Results, _React$Component);
+var Result = function (_React$Component) {
+    _inherits(Result, _React$Component);
 
-    function Results() {
-        _classCallCheck(this, Results);
+    function Result() {
+        _classCallCheck(this, Result);
 
-        return _possibleConstructorReturn(this, (Results.__proto__ || Object.getPrototypeOf(Results)).apply(this, arguments));
+        return _possibleConstructorReturn(this, (Result.__proto__ || Object.getPrototypeOf(Result)).apply(this, arguments));
     }
 
-    _createClass(Results, [{
-        key: 'render',
+    _createClass(Result, [{
+        key: "render",
         value: function render() {
-            var results = this.props.results.map(function (result, index) {
-                return React.createElement(Result, { key: index, item: result });
-            });
             return React.createElement(
-                'ul',
-                { className: 'results' },
-                results
+                "li",
+                null,
+                pad0(this.props.item.minutes),
+                ":",
+                pad0(this.props.item.seconds),
+                ".",
+                pad0(this.props.item.miliseconds)
             );
         }
     }]);
 
-    return Results;
+    return Result;
 }(React.Component);
 
-Results.PropTypes = {
-    results: React.PropTypes.array.isRequired
+Result.PropTypes = {
+    item: React.PropTypes.object.isRequired
 };

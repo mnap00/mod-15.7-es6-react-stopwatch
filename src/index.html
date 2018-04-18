@@ -7,16 +7,17 @@
 </head>
 <body>
 
-    <nav class="controls">
-        <a id="start" class="button" href="#">Start</a>
-        <a id="stop" class="button" href="#">Stop</a>
-        <a id="reset" class="button" href="#">Reset</a>
-        <a id="save" class="button" href="#">Save</a>
-        <a id="clear" class="button" href="#">Clear</a>
-    </nav>
-    <div class="stopwatch"></div>
-    <ul class="results"></ul>
+    <div id="app"></div>
 
-    <script type="text/javascript" src="js/script.js"></script>
+    <script src="https://unpkg.com/react@15/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+
+    <script src="js/components/App.js" type="text/javascript"></script>
+    <script src="js/components/Controls.js" type="text/javascript"></script>
+    <script src="js/components/Button.js" type="text/javascript"></script>
+    <script src="js/components/Stopwatch.js" type="text/javascript"></script>
+    <script src="js/components/Results.js" type="text/javascript"></script>
+    <script src="js/script.js" type="text/javascript"></script>
+
 </body>
 </html>

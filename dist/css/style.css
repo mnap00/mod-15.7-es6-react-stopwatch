@@ -1,45 +1,16 @@
 @import url("https://fonts.googleapis.com/css?family=Cutive+Mono");
-body {
-  background-color: #607d8b;
-  color: #bbb;
-  font-family: "Cutive Mono", monospace;
-}
+body { background-color: #607d8b; color: #bbb; font-family: "Cutive Mono", monospace; }
 
-.controls, .stopwatch, .results {
-  display: flex;
-  flex-wrap: wrap;
-  font-weight: bold;
-  justify-content: center;
-  max-width: 480px;
-}
+.controls, .stopwatch, .results { display: flex; flex-wrap: wrap; font-weight: bold; justify-content: center; max-width: 480px; }
 
-.controls {
-  font-size: 30px;
-  margin: 30px auto 0;
-}
+.controls { font-size: 30px; margin: 30px auto 0; }
 
-.stopwatch {
-  font-size: 90px;
-  margin: 0 auto;
-}
+.stopwatch { font-size: 90px; margin: 0 auto; }
 
-.button {
-  color: #bbb;
-  margin: 0;
-  padding: 10px 30px;
-  text-decoration: none;
-}
+.button { color: #bbb; margin: 0; padding: 10px 30px; text-decoration: none; }
 
-.results {
-  list-style-type: 0;
-  margin: 0 auto;
-  padding: 0 30px;
-}
+.results { list-style-type: 0; margin: 0 auto; padding: 0 30px; }
 
-.results li {
-  display: flex;
-  flex: 1;
-  font-size: 60px;
-  justify-content: center;
-}
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy9zYXNzL3N0eWxlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsbUVBQVk7QUFJWjtFQUNJLDBCQUF5QjtFQUN6QixZQUFXO0VBQ1gsc0NBTGdDO0NBTW5DOztBQUVEO0VBQ0ksY0FBYTtFQUNiLGdCQUFlO0VBQ2Ysa0JBQWlCO0VBQ2pCLHdCQUF1QjtFQUN2QixpQkFBZ0I7Q0FDbkI7O0FBRUQ7RUFFSSxnQkFBZTtFQUNmLG9CQUFtQjtDQUN0Qjs7QUFFRDtFQUVJLGdCQUFlO0VBQ2YsZUFBYztDQUNqQjs7QUFFRDtFQUNJLFlBQVc7RUFDWCxVQUFTO0VBQ1QsbUJBQWtCO0VBQ2xCLHNCQUFxQjtDQUN4Qjs7QUFFRDtFQUVJLG1CQUFrQjtFQUNsQixlQUFjO0VBQ2QsZ0JBQWU7Q0FPbEI7O0FBWEQ7RUFNUSxjQUFhO0VBQ2IsUUFBTztFQUNQLGdCQUFlO0VBQ2Ysd0JBQXVCO0NBQzFCIiwiZmlsZSI6InN0eWxlLmNzcyJ9 */
+.results li { display: flex; flex: 1; font-size: 60px; justify-content: center; }
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInN0eWxlLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxtRUFBbUU7QUFDbkUsT0FBTywwQkFBMEIsQ0FBQyxZQUFZLENBQUMsc0NBQXNDLEVBQUU7O0FBRXZGLGtDQUFrQyxjQUFjLENBQUMsZ0JBQWdCLENBQUMsa0JBQWtCLENBQUMsd0JBQXdCLENBQUMsaUJBQWlCLEVBQUU7O0FBRWpJLFlBQVksZ0JBQWdCLENBQUMsb0JBQW9CLEVBQUU7O0FBRW5ELGFBQWEsZ0JBQWdCLENBQUMsZUFBZSxFQUFFOztBQUUvQyxVQUFVLFlBQVksQ0FBQyxVQUFVLENBQUMsbUJBQW1CLENBQUMsc0JBQXNCLEVBQUU7O0FBRTlFLFdBQVcsbUJBQW1CLENBQUMsZUFBZSxDQUFDLGdCQUFnQixFQUFFOztBQUVqRSxjQUFjLGNBQWMsQ0FBQyxRQUFRLENBQUMsZ0JBQWdCLENBQUMsd0JBQXdCLEVBQUUiLCJmaWxlIjoic3R5bGUuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCB1cmwoXCJodHRwczovL2ZvbnRzLmdvb2dsZWFwaXMuY29tL2Nzcz9mYW1pbHk9Q3V0aXZlK01vbm9cIik7XG5ib2R5IHsgYmFja2dyb3VuZC1jb2xvcjogIzYwN2Q4YjsgY29sb3I6ICNiYmI7IGZvbnQtZmFtaWx5OiBcIkN1dGl2ZSBNb25vXCIsIG1vbm9zcGFjZTsgfVxuXG4uY29udHJvbHMsIC5zdG9wd2F0Y2gsIC5yZXN1bHRzIHsgZGlzcGxheTogZmxleDsgZmxleC13cmFwOiB3cmFwOyBmb250LXdlaWdodDogYm9sZDsganVzdGlmeS1jb250ZW50OiBjZW50ZXI7IG1heC13aWR0aDogNDgwcHg7IH1cblxuLmNvbnRyb2xzIHsgZm9udC1zaXplOiAzMHB4OyBtYXJnaW46IDMwcHggYXV0byAwOyB9XG5cbi5zdG9wd2F0Y2ggeyBmb250LXNpemU6IDkwcHg7IG1hcmdpbjogMCBhdXRvOyB9XG5cbi5idXR0b24geyBjb2xvcjogI2JiYjsgbWFyZ2luOiAwOyBwYWRkaW5nOiAxMHB4IDMwcHg7IHRleHQtZGVjb3JhdGlvbjogbm9uZTsgfVxuXG4ucmVzdWx0cyB7IGxpc3Qtc3R5bGUtdHlwZTogMDsgbWFyZ2luOiAwIGF1dG87IHBhZGRpbmc6IDAgMzBweDsgfVxuXG4ucmVzdWx0cyBsaSB7IGRpc3BsYXk6IGZsZXg7IGZsZXg6IDE7IGZvbnQtc2l6ZTogNjBweDsganVzdGlmeS1jb250ZW50OiBjZW50ZXI7IH1cbiJdfQ== */

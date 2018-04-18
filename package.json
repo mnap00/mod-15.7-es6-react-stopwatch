@@ -1,11 +1,11 @@
 {
-  "name": "mod-15.6-es6-stopwatch",
+  "name": "mod-15.7-es6-react-stopwatch",
   "version": "0.1.0",
   "description": "ES6 - Simple stopwatch",
   "main": "dist/script.js",
   "scripts": {
     "lint": "run-s lint:*",
-    "lint:html": "html5v src/*.html",
+    "lint:html": "html5v src/index.html",
     "lint:js": "eslint src/js",
     "init": "npm install && run-s init:*",
     "init:dev": "shx mkdir -p src/images src/js src/sass src/vendor test",
@@ -15,7 +15,7 @@
     "gitignore:sass": "curl https://raw.githubusercontent.com/github/gitignore/master/Sass.gitignore >> .gitignore && echo >> .gitignore",
     "gitignore:node": "curl https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore >> .gitignore && echo >> .gitignore",
     "vendor:polyfill": "shx cp node_modules/babel-polyfill/dist/polyfill.min.js src/vendor/ || true",
-    "build": "run-s build:* lint",
+    "build": "run-s lint build:*",
     "build:clean": "shx rm -rf dist && run-s init:dist",
     "build:html": "shx cp src/*.html dist/",
     "build:sass": "node-sass --output-style compact --output dist/css src/sass",
@@ -32,7 +32,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mnap00/mod-15.6-es6-stopwatch.git"
+    "url": "git+https://github.com/mnap00/mod-15.7-es6-react-stopwatch.git"
   },
   "keywords": [
     "boilerplate",
@@ -47,14 +47,17 @@
   "author": "mnap00",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mnap00/mod-15.6-es6-stopwatch/issues"
+    "url": "https://github.com/mnap00/mod-15.7-es6-react-stopwatch/issues"
   },
-  "homepage": "https://github.com/mnap00/mod-15.6-es6-stopwatch#readme",
+  "homepage": "https://github.com/mnap00/mod-15.7-es6-react-stopwatch#readme",
   "devDependencies": {
     "autoprefixer": "^8.2.0",
     "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.3",
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
     "browser-sync": "^2.23.6",
     "eslint": "^4.19.1",
     "eslint-plugin-react": "^7.7.0",

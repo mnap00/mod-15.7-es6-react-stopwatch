@@ -76,11 +76,11 @@ class App extends React.Component {
     }
     render() {
         const BUTTONS = [
-            {id: 'start', btnName: 'Start', action: () => {this.handleStart()}},
-            {id: 'stop', btnName: 'Stop', action: () => {this.handleStop()}},
-            {id: 'reset', btnName: 'Reset', action: () => {this.handleReset()}},
-            {id: 'save', btnName: 'Save', action: () => {this.handleSave()}},
-            {id: 'clear', btnName: 'Clear', action: () => {this.handleClear()}}
+            {id: 'start', btnName: 'Start', action: () => {this.handleStart();}},
+            {id: 'stop', btnName: 'Stop', action: () => {this.handleStop();}},
+            {id: 'reset', btnName: 'Reset', action: () => {this.handleReset();}},
+            {id: 'save', btnName: 'Save', action: () => {this.handleSave();}},
+            {id: 'clear', btnName: 'Clear', action: () => {this.handleClear();}}
         ];
         return (
             <div className='app'>

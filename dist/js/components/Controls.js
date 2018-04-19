@@ -24,7 +24,10 @@ var Controls = function (_React$Component) {
         key: 'render',
         value: function render() {
             var buttons = this.props.buttons.map(function (button) {
-                return React.createElement(Button, { key: button.id, item: button });
+                return React.createElement(Button, {
+                    key: button.id,
+                    item: button
+                });
             });
             return React.createElement(
                 'nav',

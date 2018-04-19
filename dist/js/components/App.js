@@ -21,19 +21,19 @@ var App = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
 
-        _this.handleStart = function (e) {
+        _this.handleStart = function () {
             _this.setState({
                 running: true
             });
         };
 
-        _this.handleStop = function (e) {
+        _this.handleStop = function () {
             _this.setState({
                 running: false
             });
         };
 
-        _this.handleReset = function (e) {
+        _this.handleReset = function () {
             _this.setState({
                 minutes: 0,
                 seconds: 0,
@@ -41,7 +41,7 @@ var App = function (_React$Component) {
             });
         };
 
-        _this.handleSave = function (e) {
+        _this.handleSave = function () {
             var item = {
                 minutes: _this.state.minutes,
                 seconds: _this.state.seconds,
@@ -52,7 +52,7 @@ var App = function (_React$Component) {
             });
         };
 
-        _this.handleClear = function (e) {
+        _this.handleClear = function () {
             _this.setState({
                 results: []
             });
@@ -63,9 +63,7 @@ var App = function (_React$Component) {
             minutes: 0,
             seconds: 0,
             miliseconds: 0,
-            results: [
-                //{minutes: 13, seconds: 42, miliseconds: 99}
-            ]
+            results: []
         };
         return _this;
     }
@@ -120,52 +118,23 @@ var App = function (_React$Component) {
         value: function render() {
             var _this3 = this;
 
+            var BUTTONS = [{ id: 'start', btnName: 'Start', action: function action() {
+                    _this3.handleStart();
+                } }, { id: 'stop', btnName: 'Stop', action: function action() {
+                    _this3.handleStop();
+                } }, { id: 'reset', btnName: 'Reset', action: function action() {
+                    _this3.handleReset();
+                } }, { id: 'save', btnName: 'Save', action: function action() {
+                    _this3.handleSave();
+                } }, { id: 'clear', btnName: 'Clear', action: function action() {
+                    _this3.handleClear();
+                } }];
             return React.createElement(
                 'div',
                 { className: 'app' },
                 React.createElement(Controls, {
                     buttons: BUTTONS
                 }),
-                React.createElement(
-                    'div',
-                    { className: 'test', style: { textAlign: 'center' } },
-                    React.createElement(
-                        'a',
-                        {
-                            id: 'testStart',
-                            className: 'button',
-                            href: '#',
-                            onClick: function onClick() {
-                                return _this3.handleStart();
-                            }
-                        },
-                        'TestStart'
-                    ),
-                    React.createElement(
-                        'a',
-                        {
-                            id: 'testStop',
-                            className: 'button',
-                            href: '#',
-                            onClick: function onClick() {
-                                return _this3.handleStop();
-                            }
-                        },
-                        'TestStop'
-                    ),
-                    React.createElement(
-                        'a',
-                        {
-                            id: 'testReset',
-                            className: 'button',
-                            href: '#',
-                            onClick: function onClick() {
-                                return _this3.handleReset();
-                            }
-                        },
-                        'TestReset'
-                    )
-                ),
                 React.createElement(Stopwatch, {
                     minutes: this.state.minutes,
                     seconds: this.state.seconds,
@@ -180,8 +149,6 @@ var App = function (_React$Component) {
 
     return App;
 }(React.Component);
-
-var BUTTONS = [{ id: 'start', btnName: 'Start' }, { id: 'stop', btnName: 'Stop' }, { id: 'reset', btnName: 'Reset' }, { id: 'save', btnName: 'Save' }, { id: 'clear', btnName: 'Clear' }];
 
 function pad0(value) {
     var result = value.toString();

@@ -7,7 +7,10 @@ class Controls extends React.Component {
     }
     render() {
         const buttons = this.props.buttons.map((button) =>
-            <Button key={button.id} item={button}/>
+            <Button
+                key={button.id}
+                item={button}
+            />
         );
         return (
             <nav className='controls'>

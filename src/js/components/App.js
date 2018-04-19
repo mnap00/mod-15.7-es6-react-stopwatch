@@ -9,29 +9,27 @@ class App extends React.Component {
             minutes: 0,
             seconds: 0,
             miliseconds: 0,
-            results: [
-                //{minutes: 13, seconds: 42, miliseconds: 99}
-            ]
+            results: []
         };
     }
-    handleStart = (e) => {
+    handleStart = () => {
         this.setState({
             running: true
         });
     }
-    handleStop = (e) => {
+    handleStop = () => {
         this.setState({
             running: false
         });
     }
-    handleReset = (e) => {
+    handleReset = () => {
         this.setState({
             minutes: 0,
             seconds: 0,
             miliseconds: 0
         });
     }
-    handleSave = (e) => {
+    handleSave = () => {
         let item = {
             minutes: this.state.minutes,
             seconds: this.state.seconds,
@@ -41,7 +39,7 @@ class App extends React.Component {
             results: [...this.state.results, item]
         });
     }
-    handleClear = (e) => {
+    handleClear = () => {
         this.setState({
             results: []
         });
@@ -77,37 +75,18 @@ class App extends React.Component {
         }
     }
     render() {
+        const BUTTONS = [
+            {id: 'start', btnName: 'Start', action: () => {this.handleStart()}},
+            {id: 'stop', btnName: 'Stop', action: () => {this.handleStop()}},
+            {id: 'reset', btnName: 'Reset', action: () => {this.handleReset()}},
+            {id: 'save', btnName: 'Save', action: () => {this.handleSave()}},
+            {id: 'clear', btnName: 'Clear', action: () => {this.handleClear()}}
+        ];
         return (
             <div className='app'>
                 <Controls
                     buttons={BUTTONS}
                 />
-                <div className='test' style={{textAlign: 'center'}}>
-                    <a
-                        id='testStart'
-                        className='button'
-                        href='#'
-                        onClick={() => this.handleStart()}
-                    >
-                        TestStart
-                    </a>
-                    <a
-                        id='testStop'
-                        className='button'
-                        href='#'
-                        onClick={() => this.handleStop()}
-                    >
-                        TestStop
-                    </a>
-                    <a
-                        id='testReset'
-                        className='button'
-                        href='#'
-                        onClick={() => this.handleReset()}
-                    >
-                        TestReset
-                    </a>
-                </div>
                 <Stopwatch
                     minutes={this.state.minutes}
                     seconds={this.state.seconds}
@@ -121,13 +100,6 @@ class App extends React.Component {
     }
 }
 
-const BUTTONS = [
-    {id: 'start', btnName: 'Start'},
-    {id: 'stop', btnName: 'Stop'},
-    {id: 'reset', btnName: 'Reset'},
-    {id: 'save', btnName: 'Save'},
-    {id: 'clear', btnName: 'Clear'}
-];
 
 function pad0(value) {
     let result = value.toString();

@@ -25,8 +25,14 @@ var Button = function (_React$Component) {
         value: function render() {
             return React.createElement(
                 'a',
-                { id: this.props.item.id, className: 'button', href: '#' },
-                this.props.item.btnName
+                {
+                    id: this.props.item.id,
+                    className: 'button',
+                    onClick: this.props.item.action,
+                    href: '#'
+                },
+                this.props.item.btnName,
+                this.props.item.action
             );
         }
     }]);

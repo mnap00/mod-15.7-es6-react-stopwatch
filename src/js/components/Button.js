@@ -7,8 +7,14 @@ class Button extends React.Component {
     }
     render() {
         return (
-            <a id={this.props.item.id} className='button' href='#'>
+            <a
+                id={this.props.item.id}
+                className='button'
+                onClick={this.props.item.action}
+                href='#'
+            >
                 {this.props.item.btnName}
+                {this.props.item.action}
             </a>
         );
     }
